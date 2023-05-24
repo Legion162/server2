@@ -15,7 +15,7 @@ const currentHour = currentDate.getHours();
 const currentMinute = currentDate.getMinutes();
 const timestamp = `[${currentHour}:${currentMinute}]`;
 var victims = [];
-var port = process.env.PORT // || 2000
+var port = process.env.PORT || 2000
 
 
 wss.on('connection', (w) => {

