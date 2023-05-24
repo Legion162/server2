@@ -1,9 +1,11 @@
 const app = require('express')();
 const server = require('http').Server(app);
+const protocol = window.location.protocol.includes('https') ? 'wss': 'ws'
 const ws = require('ws');
-const wss = new ws.Server({
-	server,
-});
+const wss = new ws(`${protocol}://${location.host}`);
+// const wss = new ws.Server({
+// 	server,
+// });
 const wsSelected = new Set();
 var target = ``;
 const colors = require(`colors162`);
@@ -16,6 +18,7 @@ const currentMinute = currentDate.getMinutes();
 const timestamp = `[${currentHour}:${currentMinute}]`;
 var victims = [];
 var port = process.env.PORT || 2000
+
 
 wss.on('connection', (w) => {
 	target = ``;
